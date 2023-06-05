@@ -36,7 +36,12 @@ export default function NewMemory() {
             Tornar memória pública
           </label>
         </div>
-        <input type="file" id="media" className="invisible h-0 w-0" />
+        <input
+          onChange={(value) => console.log(value)}
+          type="file"
+          id="media"
+          className="invisible h-0 w-0"
+        />
         <textarea
           name="content"
           spellCheck={false}

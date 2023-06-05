@@ -6,10 +6,16 @@ import { memoriesRoutes } from "./routes/memories";
 import multipart from "@fastify/multipart";
 import { authRoutes } from "./routes/auth";
 import { uploadRoutes } from "./routes/upload";
+import { resolve } from "path";
 
 const app = fastify();
 
 app.register(multipart);
+
+app.register(require("@fastify/static"), {
+  root: resolve(__dirname, "../uploads"),
+  prefix: "/uploads",
+});
 
 app.register(cors, {
   origin: true, // Todas as URLS de front-end poderão acessar nosso back-end
