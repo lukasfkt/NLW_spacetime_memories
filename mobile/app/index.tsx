@@ -3,14 +3,9 @@ import { Text, View, TouchableOpacity } from "react-native";
 import { useEffect } from "react";
 import { useRouter } from "expo-router";
 
-import Stripes from "../src/assets/stripes.svg";
-
 import NlwLogo from "../src/assets/nlw-spacetime-logo.svg";
-import { styled } from "nativewind";
 import { makeRedirectUri, useAuthRequest } from "expo-auth-session";
 import { api } from "../src/lib/api";
-
-const StyledStripes = styled(Stripes);
 
 const discovery = {
   authorizationEndpoint: "https://github.com/login/oauth/authorize",
